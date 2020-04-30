@@ -1,8 +1,16 @@
 class User:
+
+    active_user = 0
+
     def __init__(self, first, last, age):
         self.first = first
         self.last = last
         self.age = age
+        User.active_user +=1
+
+    def logout(self):
+        User.active_user -=1
+        return f"{self.first} has logged out"
 
     def full_name(self):
         return f"{self.first} {self.last}"
@@ -23,10 +31,13 @@ class User:
         self.age +=1
         return f"Happy {self.age}th birthday, {self.first}"
 
-user1 = User("joe","mcman", 55)
-user2 = User("annaelle","nubs", 34)
+user1 = User("annaelle","nubs", 34)
+user2 = User("me","nubs", 34)
+user3 = User("babes","nubs", 34)
 
+print(User.active_user)
 print(user1.birthday())
 print(user1.full_name())
 print(user1.age)
-print(user1.is_senior())
+print(user1.logout())
+print(User.active_user)
