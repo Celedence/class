@@ -6,7 +6,12 @@ class Pet:
         self.name = name
         self.species = species
 
-cat = Pet("Annabel", "bird")
+    def set_species(self, species):
+        if species not in Pet.allowed:
+            raise ValueError (f"You cant have a {species} pet")
+        self.species = species
+        
+cat = Pet("Annabel", "fish")
 dog = Pet("Peanut", "dog")
 
 print(cat.name)
