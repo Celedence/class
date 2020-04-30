@@ -1,9 +1,12 @@
 class Pet:
+    allowed = ["cat","dog","fish","rat"]
     def __init__(self, name, species):
+        if species not in Pet.allowed:
+            raise ValueError(f"You can't have a {species} pet")
         self.name = name
         self.species = species
 
-cat = Pet("Annabel", "cat")
+cat = Pet("Annabel", "bird")
 dog = Pet("Peanut", "dog")
 
 print(cat.name)
