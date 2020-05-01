@@ -31,13 +31,18 @@ class User:
         self.age +=1
         return f"Happy {self.age}th birthday, {self.first}"
 
+    @classmethod
+    def set_active_user(cls, num):
+        cls.active_user = num
+
 user1 = User("annaelle","nubs", 34)
 user2 = User("me","nubs", 34)
 user3 = User("babes","nubs", 34)
+
+User.set_active_user(5)
 
 print(User.active_user)
 print(user1.birthday())
 print(user1.full_name())
 print(user1.age)
-print(user1.logout())
 print(User.active_user)
