@@ -27,13 +27,12 @@ class Deck:
         if count == 0:
             raise ValueError ("All cards have been dealt")
         cards = self.cards[-actual:]
-        self.cards = self.cards[-actual:]
+        self.cards = self.cards [:-actual]
         return cards
     
 
 
 d = Deck()
-print(d._deal(5))
 print(d)
 
 
