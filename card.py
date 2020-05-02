@@ -14,13 +14,27 @@ class Deck:
         self.cards = [Card(value, suit) for suit in suits for value in values]
         print (self.cards)
 
+    def __repr__(self):
+        return f"Deck of {self.count()} cards"
+
+
     def count(self):
         return len(self.cards)
 
+    def _deal(self, num):
+        count = self.count()
+        actual = min([count,num])
+        if count == 0
+            raise ValueError "All cards have been dealt"
+        cards = self.cards[-actual:]
+        self.cards = self.cards[-actual:]
+        return cards
+    
+
 
 d = Deck()
-d.cards.pop()
-print(d.count())
+d._deal(5)
+print(d)
 
 
 
