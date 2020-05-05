@@ -37,10 +37,11 @@ class Moderator(User):
         self.community = community
 
     def remove_post(self):
-        return (f"{self.full_name} removed your post from the {self.community}")
+        return f"{self.full_name()} removed your post from the {self.community}"
 
 jasmine = Moderator("Jasmine", "Connor", 61, "piano")
 
 print(jasmine.full_name())
 print(jasmine.likes("chips"))
 print(jasmine.is_senior())
+print(jasmine.remove_post())
