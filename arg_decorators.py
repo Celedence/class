@@ -20,8 +20,13 @@ print(order("burger","fries"))
 
 print(lol())
 
-#==========
+#============
+from functools import wraps
+# preserves a functions metadata
+# when it's decorated
+
 def log_function_data(fn):
+    @wraps(fn)
     def wrapper(*args, **kwargs):
         """Im a wrapper function"""
         print(f"you are calling the {fn.__name__} function")
