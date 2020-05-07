@@ -23,6 +23,7 @@ print(lol())
 #==========
 def log_function_data(fn):
     def wrapper(*args, **kwargs):
+        """Im a wrapper function"""
         print(f"you are calling the {fn.__name__} function")
         print(f"Here's the documentation: {fn.__doc__}")
         return fn(*args, **kwargs)
@@ -34,3 +35,7 @@ def add(x, y):
     return x + y
 
 print(add(23, 23))
+print(add.__doc__)
+# is giving doc string from the wrapper function
+print(add.__name__)
+#  is giving the wrapper function name
