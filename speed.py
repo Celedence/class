@@ -1,4 +1,25 @@
-import time 
-gen_start_time = time.time()
-print(sum(n for n in range(1000000000)))
-gen_stop = time.time() - gen_start_time
+from time import time
+from functools import wraps
+
+def speed_test(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        start_time = time()
+        result = fn(*args, **kwargs)
+        end_time = time()
+        print(f"Exucuting {fn.__name__}")
+        print(f"Time Elapsed: {end_time - start_time}")
+        return result
+    return wrapper
+
+
+@speed_test
+def sum_nums_gen():
+    return sum(x for x in range (120000000))
+print(sum_nums_gen())
+
+@speed_test
+def sum_nums_list():
+    return sum([x for x in range (120000000)])
+print(sum_nums_list())
+
