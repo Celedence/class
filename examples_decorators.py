@@ -28,7 +28,7 @@ def only_ints(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):
         if any([arg for arg in args if type(arg) !=int]):
-            return "Please only enter integers"
+            raise ValueError ("Please only enter integers")
         return fn(*args, **kwargs)
     return wrapper
 
