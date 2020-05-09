@@ -19,17 +19,19 @@ print(fav_foods("steak","chips"))
 
 # ===========================
 
-def enforce(*type):
+def enforce(*types):
     def wrapper(fn):
         def new_func(*args, **kwargs):
             new_list = []
             for (a, b) in zip(args, types):
-                new_list.append(a(b))
+                new_list.append( b(a))
             return fn(*new_list,**kwargs)
         return new_func
     return wrapper
 
 @enforce(str, int)
-def repeat(msg, time):
-    for time in range(time):
+def repeat(msg, times):
+    for time in range(times):
         print(msg)
+
+repeat("hello", 3)
