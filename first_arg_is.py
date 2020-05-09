@@ -16,3 +16,8 @@ def fav_foods(*foods):
 
 print(fav_foods("burrito","chips"))
 print(fav_foods("steak","chips"))
+
+@enforce(str, int)
+def repeat(msg, time):
+    for time in range(time):
+        print(msg)
