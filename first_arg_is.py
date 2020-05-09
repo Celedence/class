@@ -9,7 +9,7 @@ def ensure_first_arg_is(val):
             return fn(*args, **kwargs)
         return wrapper
     return inner
-
+# decrator that accepts an argument
 @ensure_first_arg_is("steak")
 def fav_foods(*foods):
     print(foods)
