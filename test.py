@@ -27,3 +27,7 @@ class ActivityTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+# python3 test.py -v,
+# adding -v command gives test function names
+#  verbose 
