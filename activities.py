@@ -8,3 +8,9 @@ def nap(hours):
     if hours >= 2:
         return f"Im feeling more tired"
     return f"im feeling refreshed after {hours} hour nap"
+
+def is_funny(person):
+    if person is "tim":
+        return False
+    return True
+
