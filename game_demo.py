@@ -1,7 +1,7 @@
 class Prot:
-    def __init__(self, name, exp, skills= []):
-        self.name = name,
-        self.exp = exp,
+    def __init__(self, name, exp=100, skills= []):
+        self.name = name
+        self.exp = exp
         self.skills = skills
 
     def earned(self):
@@ -9,7 +9,7 @@ class Prot:
         return self
 
     def say_name(self):
-        if self.exp >= 10:
+        if self.exp > 10:
             self.exp -= 5
             return f"I'm {self.name}"
         return "I need more exp yet"
