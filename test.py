@@ -8,10 +8,16 @@ class ActivityTests(unittest.TestCase):
             "I'm eating carrots, because they are good"
         )
     def test_eat_unhealthy(self):
-            self.assertEqual(
+        self.assertEqual(
             eat("pizza", is_healthy=False),
             "I'm eating pizza, YOLO"
         )
+
+    def test_eat_healthy_bool(self):
+        """is healthy must be a bool"""
+        with self.assertRaises(ValueError):
+            eat("pizza", is_healthy="who cares")
+
 
     def test_short_nap(self):
         self.assertEqual(

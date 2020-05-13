@@ -1,4 +1,8 @@
+from random import choice
+
 def eat(food, is_healthy):
+    if not isinstance(is_healthy, bool):
+        raise ValueError("must be boolean")
     ending = "YOLO"
     if is_healthy:
         ending = "because they are good"
@@ -15,5 +19,5 @@ def is_funny(person):
     return True
 
 def laugh():
-    pass
+    return choice(('lol', 'ha', 'tehe'))
 
