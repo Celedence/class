@@ -14,3 +14,6 @@ def is_funny(person):
         return False
     return True
 
+def laugh():
+    pass
+
